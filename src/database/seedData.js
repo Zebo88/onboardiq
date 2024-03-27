@@ -268,18 +268,234 @@ async function createInitialGoals() {
 
     const goalsToCreate = [
       { user_id: 1, goal: "Become an expert at creating Stored Procedures in MySQL." },
+      { user_id: 1, goal: "Become a expert reliable troubleshooting resource." },
       { user_id: 2, goal: "Become a Sr. Data Specialist." }
     ]
-    const goals = await Promise.all(goalsToCreate.map(createGoals)); // Need to create a function for this.
+    const goals = await Promise.all(goalsToCreate.map(createGoals));
 
     console.log('Goals created:');
-    console.log(users);
+    console.log(goals);
     console.log('Finished creating goals!');
   } catch (error) {
     console.error('Error creating goals!');
     throw error;
   }
 }
+
+async function createInitialLessons() {
+  console.log('Starting to create lessons...');
+  try {
+
+    const lessonsToCreate = [
+      { lesson: "Raw Data File Import", category: "Data Import" },
+      { lesson: "Data Import Request", category: "Data Import" },
+      { lesson: "Data-Only Structure", category: "Data Structure" },
+      { lesson: "Image-Only Structure", category: "Data Structure" },
+      { lesson: "Image and Data Update Structure", category: "Data Structure" },
+      { lesson: "Additional Fields Structure", category: "Data Structure" },
+      { lesson: "Standard Metadata", category: "Metadata" },
+      { lesson: "French Metadata", category: "Metadata" },
+      { lesson: "Standard Index Delivery", category: "Index Delivery" },
+      { lesson: "French Index Delivery", category: "Index Delivery" },
+      { lesson: "Fold3 Index Delivery", category: "Index Delivery" },
+    ]
+    const lessons = await Promise.all(lessonsToCreate.map(createLessons));
+
+    console.log('Lessons created:');
+    console.log(lessons);
+    console.log('Finished creating lessons!');
+  } catch (error) {
+    console.error('Error creating lessons!');
+    throw error;
+  }
+}
+
+async function createInitialInstructors() {
+  console.log('Starting to create instructors...');
+  try {
+
+    const instructorsToCreate = [
+      { user_id: 1, firstname: "Zach", lastname: "Fullmer" },
+      { user_id: 1, firstname: "Bruce", lastname: "Wayne" }
+    ]
+    const instructors = await Promise.all(instructorsToCreate.map(createInstructors));
+
+    console.log('Instructors created:');
+    console.log(instructors);
+    console.log('Finished creating instructors!');
+  } catch (error) {
+    console.error('Error creating instructors!');
+    throw error;
+  }
+}
+
+async function createInitialUsersAndLessons() {
+  console.log('Starting to create user lessons...');
+  try {
+
+    const userLessonsToCreate = [
+      { lesson_id: 1, user_id: 1, is_completed: true, date_completed: "6-26-2021", notes: "He understood the task well and could successfully import data correctly.", instructor_name: "Bruce" },
+      { lesson_id: 2, user_id: 1, is_completed: true, date_completed: "7-10-2021", notes: "He picked up this task fairly quickly because he has experience with the raw data imports.", instructor_name: "Bruce" },
+      { lesson_id: 1, user_id: 2, is_completed: true, date_completed: "3-26-2024", notes: "He needs to spend more time on his batcomputer instead of his batphone so he can understand data imports.", instructor_name: "Zach" },
+    ]
+    const userLessons = await Promise.all(userLessonsToCreate.map(createUserLessons));
+
+    console.log('User Lessons created:');
+    console.log(userLessons);
+    console.log('Finished creating user lessons!');
+  } catch (error) {
+    console.error('Error creating user lessons!');
+    throw error;
+  }
+}
+
+async function createInitialSPLadder() {
+  console.log('Starting to create Specialist Ladder...');
+  try {
+
+    const spLadderToCreate = [
+      { competency: "Ability to independently troubleshoot errors in SQL, Excel, etc. related to assigned tasks and requests." },
+      { competency: "Basic understanding of our stored procedures and saved queries. Can successfully troubleshoot independently and occasionally assist others." },
+      { competency: "Full-ownership of each task and request assigned to them." },
+      { competency: `Knowledge of the "how" and "why" of team responsibilities and how that fits in with and effects the rest of publishing.` },
+      { competency: "Completes mosts tasks and requests with little to no supervision or assistance from supervisor or team members." }
+    ]
+    const spLadder = await Promise.all(spLadderToCreate.map(createSPLadder));
+
+    console.log('Specialist Ladder created:');
+    console.log(spLadder);
+    console.log('Finished creating Specialist Ladder!');
+  } catch (error) {
+    console.error('Error creating Specialist Ladder!');
+    throw error;
+  }
+}
+
+async function createInitialSrLadder() {
+  console.log('Starting to create Sr. Specialist Ladder...');
+  try {
+
+    const srLadderToCreate = [
+      { competency: "Ability to independently troubleshoot errors in SQL, Excel, and other technical areas outside the team's day to day scope." },
+      { competency: "Ability to create new stored procedures and query templates (documentation) from scratch for new processes. Or improve existing processes." },
+      { competency: "Assists supervisor with managing specific projects or processes required by the team through the entire pipeline (i.e. FSAPI, Web Crawl, Yearbooks, etc.)" },
+      { competency: `Expert knowledge of the "how" and "why" of team responsibilities and how that fits in with and effects the rests of publishing and teams external to publishing.` },
+      { competency: "Completes all tasks and requests with little to no supervision or assistance and often helps others to complete their tasks and requests; including volunteering to take over others' requests and tasks when needed." }
+    ]
+    const srLadder = await Promise.all(srLadderToCreate.map(createSrLadder));
+
+    console.log('Sr. Specialist Ladder created:');
+    console.log(srLadder);
+    console.log('Finished creating Sr. Specialist Ladder!');
+  } catch (error) {
+    console.error('Error creating Sr. Specialist Ladder!');
+    throw error;
+  }
+}
+
+async function createInitialLDLadder() {
+  console.log('Starting to create Leader Ladder...');
+  try {
+
+    const ldLadderToCreate = [
+      { competency: "Ability to lead meetings." },
+      { competency: "Ability to manage task queues." }
+    ]
+    const ldLadder = await Promise.all(ldLadderToCreate.map(createLDLadder));
+
+    console.log('Leader Ladder created:');
+    console.log(ldLadder);
+    console.log('Finished creating Leader Ladder!');
+  } catch (error) {
+    console.error('Error creating Leader Ladder!');
+    throw error;
+  }
+}
+
+async function createInitialUserSPLadder() {
+  console.log('Starting to create User Specialist Ladder...');
+  try {
+
+    const userSPLadderToCreate = [
+      { user_id: 1, status: "Competent", ladder_id: 1 },
+      { user_id: 1, status: "Competent", ladder_id: 2 },
+      { user_id: 2, status: "In-Progress", ladder_id: 1 },
+      { user_id: 2, status: "Stuck", ladder_id: 2 }
+    ]
+    const userSPLadder = await Promise.all(userSPLadderToCreate.map(createUserSPLadder));
+
+    console.log('User Specialist Ladder created:');
+    console.log(userSPLadder);
+    console.log('Finished creating User Specialist Ladder!');
+  } catch (error) {
+    console.error('Error creating User Specialist Ladder!');
+    throw error;
+  }
+}
+
+async function createInitialUserSRLadder() {
+  console.log('Starting to create User Sr Specialist Ladder...');
+  try {
+
+    const userSRLadderToCreate = [
+      { user_id: 1, status: "Competent", ladder_id: 1 },
+      { user_id: 1, status: "Competent", ladder_id: 2 },
+      { user_id: 2, status: "In-Progress", ladder_id: 1 },
+      { user_id: 2, status: "Stuck", ladder_id: 2 }
+    ]
+    const userSRLadder = await Promise.all(userSRLadderToCreate.map(createUserSRLadder));
+
+    console.log('User Sr Specialist Ladder created:');
+    console.log(userSRLadder);
+    console.log('Finished creating User Sr Specialist Ladder!');
+  } catch (error) {
+    console.error('Error creating User Sr Specialist Ladder!');
+    throw error;
+  }
+}
+
+async function createInitialUserLDLadder() {
+  console.log('Starting to create User Leader Ladder...');
+  try {
+
+    const userLDLadderToCreate = [
+      { user_id: 1, status: "Competent", ladder_id: 1 },
+      { user_id: 1, status: "Competent", ladder_id: 2 },
+      { user_id: 2, status: "In-Progress", ladder_id: 1 },
+      { user_id: 2, status: "Stuck", ladder_id: 2 }
+    ]
+    const userLDLadder = await Promise.all(userLDLadderToCreate.map(createUserLDLadder));
+
+    console.log('User Leader Ladder created:');
+    console.log(userLDLadder);
+    console.log('Finished creating User Leader Ladder!');
+  } catch (error) {
+    console.error('Error creating User Leader Ladder!');
+    throw error;
+  }
+}
+
+async function createInitial30DayPlan() {
+  console.log('Starting to create 30 Day Plan...');
+  try {
+
+    const thirtyDayPlanToCreate = [
+      { plan_id: 1, competency: "Basic understanding of SQL.", subcompetency: "Able to navigate and understand our templates." },
+      { plan_id: 1, competency: "Basic understanding of SQL.", subcompetency: "Run through SQL trainings." },
+      { plan_id: 2, competency: "Basic understanding of team's processes.", subcompetency: "" },
+      { plan_id: 3, competency: "Initial training on metadata and data structure tasks.", subcompetency: "Able to complete simple metadata and data structure tasks with help from team." },
+      { plan_id: 3, competency: "Initial training on metadata and data structure tasks.", subcompetency: "General understanding of field authority and record model" },
+    ]
+    const thirtyDayPlan = await Promise.all(thirtyDayPlanToCreate.map(createThirtyDayPlan));
+
+    console.log('30 Day Plan created:');
+    console.log(thirtyDayPlan);
+    console.log('Finished creating 30 Day Plan!');
+  } catch (error) {
+    console.error('Error creating 30 Day Plan!');
+    throw error;
+  }
+} // Need to create a function for this
 
 
 
@@ -290,8 +506,17 @@ export async function rebuildDB() {
     await createTables();
     await createInitialUsers();
     await createInitialGoals();
-    await createInitialCartsAndProducts();
-    await createInitialOrdersAndItems();
+    await createInitialLessons();
+    await createInitialInstructors();
+    await createInitialUsersAndLessons();
+    await createInitialSPLadder();
+    await createInitialSrLadder();
+    await createInitialLDLadder();
+    await createInitialUserSPLadder();
+    await createInitialUserSRLadder();
+    await createInitialUserLDLadder();
+    await createInitial30DayPlan();
+
   } catch (error) {
     console.log('Error during rebuildDB')
     throw error;

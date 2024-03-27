@@ -1,8 +1,9 @@
-# React + Vite
+# OnboardIQ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## This project is a new employee onboarding and training program that can be used specifically for my job.
+## The program covers these main progress tracking needs:
+### Training Lessons
+### Career Ladder
+### Goals
+### 30-60-90 Day Plans
+### Beyond 90 Day Plans (6 month and 1 year)
